@@ -41,7 +41,19 @@ public double 		expected;
 public String 		nameTest;
 
 
+@Mock
+private ICentralRisk centralRisk;
 
+@Mock
+private IBillDAO billDAO;
+
+
+@Before
+public void setup() {
+	MockitoAnnotations.initMocks(this);
+} 
+
+@InjectMocks
 public MovieService 	movieService = new MovieService();
 
 
