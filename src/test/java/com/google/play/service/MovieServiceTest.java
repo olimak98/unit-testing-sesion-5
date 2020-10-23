@@ -94,6 +94,12 @@ public class MovieServiceTest {
 		bill = movieService.rentMovie(user, movies);
 		
 		//Assert
+		ArgumentCaptor<Bill> captor = ArgumentCaptor.forClass(Bill.class);
+		
+		verify(billDAO).save(captor.capture());
+		
+		Bill billCapture = captor.getValue();
+		
 		Assert.assertEquals(expected, bill.getNetPrice(),0.1);
 		
 	}

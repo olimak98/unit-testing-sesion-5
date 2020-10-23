@@ -32,7 +32,7 @@ public class MovieBuilder {
 	
 	
 	public MovieBuilder noStock() {
-		movie.setStock(0);
+		movie.setStock(-1);
 		return this;
 	}
 	
