@@ -25,7 +25,7 @@ public class MovieService {
 	public Bill rentMovie(User user,List<Movie> movies) throws Exception {
 
 		for (Movie movie : movies) {
-			if(movie.getStock()	==	0) {
+			if(movie.getStock()	<=	0) {
 				throw new Exception("No movie");
 			}
 		}
