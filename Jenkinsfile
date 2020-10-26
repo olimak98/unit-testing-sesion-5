@@ -2,8 +2,11 @@ pipeline {
 	agent any
 	stages {
 		stage ('Build Backend') {
+			environment {
+				mvnHOME = tool 'MAVEN_HOME'
+			}
+			
 			steps {
-				def mvnHome = tool name: "MAVEN_HOME", type: 'maven'
 				sh "${mvnHome}/bin/mvn clean package -DskipTests=true"
 			}
 		}
