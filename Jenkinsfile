@@ -23,7 +23,7 @@ pipeline {
 			}
 			steps {
 				withSonarQubeEnv('Sonar') {
-					sh "${scannerHome}/bin/sonar-scanner -e"
+					sh "${scannerHome}/bin/sonar-scanner -e -Dsonar.projectKey=deployBackendCI -Dsonar.host.url=http://sonarqube:9000 -Dsonar.login=8b659e23f55bc5c1dd90b73b01a04520d8d53d89 -Dsonar.java.binaries=target"
 				}
 			}
 		}
